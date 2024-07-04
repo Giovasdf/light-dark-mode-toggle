@@ -42,7 +42,6 @@ Para configurar este proyecto localmente, sigue estos pasos:
 
 1. Clona el repositorio:
 ```sh
-Copy code
 git clone https://github.com/Giovasdf/light-dark-mode-toggle
 ```
 
