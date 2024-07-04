@@ -11,30 +11,49 @@
     <link rel="stylesheet" href="css/module.css">
     <link rel="stylesheet" href="css/state.css">
     <link rel="stylesheet" href="css/theme.css">
+    <style>
+        .disabled {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+    </style>
 </head>
 <body class="theme-light">
     <div class="container d-flex justify-content-center align-items-center vh-100">
-        <div class="box light-mode" onclick="toggleMode()">
+        <div id="light-mode" class="box light-mode" onclick="toggleMode('light')">
             <i class="fas fa-sun"></i>
             <p>Light</p>
         </div>
-        <div class="box dark-mode" onclick="toggleMode()">
+        <div id="dark-mode" class="box dark-mode" onclick="toggleMode('dark')">
             <i class="fas fa-moon"></i>
             <p>Dark</p>
         </div>
     </div>
     <script>
         // Función para alternar entre modos claro y oscuro
-        function toggleMode() {
-            // Alterna la clase 'theme-dark' en el elemento 'body'
-            // Si 'theme-dark' está presente, la quita; si no está, la añade
-            document.body.classList.toggle('theme-dark');
-    
-            // Alterna la clase 'theme-light' en el elemento 'body'
-            // Si 'theme-light' está presente, la quita; si no está, la añade
-            document.body.classList.toggle('theme-light');
+        function toggleMode(mode) {
+            if (mode === 'light' && document.body.classList.contains('theme-dark')) {
+                document.body.classList.remove('theme-dark');
+                document.body.classList.add('theme-light');
+            } else if (mode === 'dark' && document.body.classList.contains('theme-light')) {
+                document.body.classList.remove('theme-light');
+                document.body.classList.add('theme-dark');
+            }
+            updateButtons();
         }
+
+        function updateButtons() {
+            if (document.body.classList.contains('theme-light')) {
+                document.getElementById('light-mode').classList.add('disabled');
+                document.getElementById('dark-mode').classList.remove('disabled');
+            } else if (document.body.classList.contains('theme-dark')) {
+                document.getElementById('dark-mode').classList.add('disabled');
+                document.getElementById('light-mode').classList.remove('disabled');
+            }
+        }
+
+        // Actualizar los botones al cargar la página
+        updateButtons();
     </script>
-    
 </body>
 </html>

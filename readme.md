@@ -59,13 +59,26 @@ The JavaScript toggles the theme-dark and theme-light classes on the body elemen
 
 ``` javascript
 <script>
-    // Function to toggle between light and dark modes
-    function toggleMode() {
-        // Toggle the 'theme-dark' class on the 'body' element
-        document.body.classList.toggle('theme-dark');
-        // Toggle the 'theme-light' class on the 'body' element
-        document.body.classList.toggle('theme-light');
-    }
+    function toggleMode(mode) {
+            if (mode === 'light' && document.body.classList.contains('theme-dark')) {
+                document.body.classList.remove('theme-dark');
+                document.body.classList.add('theme-light');
+            } else if (mode === 'dark' && document.body.classList.contains('theme-light')) {
+                document.body.classList.remove('theme-light');
+                document.body.classList.add('theme-dark');
+            }
+            updateButtons();
+        }
+
+        function updateButtons() {
+            if (document.body.classList.contains('theme-light')) {
+                document.getElementById('light-mode').classList.add('disabled');
+                document.getElementById('dark-mode').classList.remove('disabled');
+            } else if (document.body.classList.contains('theme-dark')) {
+                document.getElementById('dark-mode').classList.add('disabled');
+                document.getElementById('light-mode').classList.remove('disabled');
+            }
+        }
 </script>
 ```
 ## Customization
