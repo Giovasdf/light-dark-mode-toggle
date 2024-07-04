@@ -1,5 +1,8 @@
+# [Ir a Version en Español](readme_es.md)
+
 # Light/Dark Mode Toggle with SMACSS
 This project demonstrates a simple light/dark mode toggle using HTML, CSS (organized with SMACSS), JavaScript, Font Awesome for icons, and Bootstrap for layout.
+
 
 ![Screenshot Toggle](ImagenRepo.png)
 
@@ -78,4 +81,4 @@ You can customize the appearance and behavior of the light/dark mode toggle by m
 Contributions are welcome! If you have suggestions or improvements, please create an issue or submit a pull request.
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. 
