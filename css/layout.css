@@ -1,0 +1,17 @@
+/* Layout styles */
+.container {
+    text-align: center;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light/Dark Mode</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/module.css">
+    <link rel="stylesheet" href="css/state.css">
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+<body class="theme-light">
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="box light-mode" onclick="toggleMode()">
+            <i class="fas fa-sun"></i>
+            <p>Light</p>
+        </div>
+        <div class="box dark-mode" onclick="toggleMode()">
+            <i class="fas fa-moon"></i>
+            <p>Dark</p>
+        </div>
+    </div>
+    <script>
+        // Función para alternar entre modos claro y oscuro
+        function toggleMode() {
+            // Alterna la clase 'theme-dark' en el elemento 'body'
+            // Si 'theme-dark' está presente, la quita; si no está, la añade
+            document.body.classList.toggle('theme-dark');
+    
+            // Alterna la clase 'theme-light' en el elemento 'body'
+            // Si 'theme-light' está presente, la quita; si no está, la añade
+            document.body.classList.toggle('theme-light');
+        }
+    </script>
+    
+</body>
+</html>
